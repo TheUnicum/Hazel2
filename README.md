@@ -1,1 +1,1 @@
-# Hazel2
+# Hazel2 Engine
