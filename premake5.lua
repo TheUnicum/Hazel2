@@ -64,58 +64,64 @@ project "Hazel"
 
     filter "configurations:Debug"
         defines "HZ_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "HZ_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "HZ_DIST"
+        buildoptions "/MD"
         optimize "On"
 
 project "Sandbox"
-        location "Sandbox"
-        kind "ConsoleApp"
-        language "C++"
+    location "Sandbox"
+    kind "ConsoleApp"
+    language "C++"
     
-        targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-        objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-    
-        files
-        {
-            "%{prj.name}/src/**.h",
-            "%{prj.name}/src/**.cpp",
-        }
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-        includedirs
-        {
-            "Hazel/vendor/spdlog/include",
-            "Hazel/src",
-        }
+    files
+    {
+        "%{prj.name}/src/**.h",
+        "%{prj.name}/src/**.cpp",
+    }
 
-        links
-        {
-            "Hazel"
-        }
+    includedirs
+    {
+        "Hazel/vendor/spdlog/include",
+        "Hazel/src",
+    }
 
-        filter "system:windows"
-            staticruntime "On"
-            systemversion "latest"
-    
-            defines
-            {
-                "HZ_PLATFORM_WINDOWS",
-            }
-    
-        filter "configurations:Debug"
-            defines "HZ_DEBUG"
-            symbols "On"
-    
-        filter "configurations:Release"
-            defines "HZ_RELEASE"
-            optimize "On"
-    
-        filter "configurations:Dist"
-            defines "HZ_DIST"
-            optimize "On"
+    links
+    {
+        "Hazel"
+    }
+
+    filter "system:windows"
+        staticruntime "On"
+        systemversion "latest"
+
+    defines
+    {
+        "HZ_PLATFORM_WINDOWS",
+    }
+
+    filter "configurations:Debug"
+        defines "HZ_DEBUG"
+        buildoptions "/MDd"
+        symbols "On"
+
+    filter "configurations:Release"
+        defines "HZ_RELEASE"
+        buildoptions "/MD"
+        optimize "On"
+
+    filter "configurations:Dist"
+        defines "HZ_DIST"
+        buildoptions "/MD"
+        optimize "On"
