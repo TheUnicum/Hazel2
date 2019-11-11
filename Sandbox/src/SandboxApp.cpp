@@ -18,9 +18,6 @@ public:
 
 	void OnImGuiRender() override
 	{
-		ImGui::Begin("Test");
-		ImGui::Text("Hello World!");
-		ImGui::End();
 		/*
 		Hazel\vendor\imgui\imconfig.h
 		uncomment line 21
@@ -30,9 +27,9 @@ public:
 		#define IMGUI_API __declspec( dllexport )
 		*/
 
-		//ImGui::Begin("Test");
-		//ImGui::Text("Hello World!");
-		//ImGui::End();
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World!");
+		ImGui::End();
 	}
 
 	void OnEvent(Hazel::Event& event) override

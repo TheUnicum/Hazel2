@@ -23,7 +23,7 @@ namespace Hazel {
 		EVENT_CLASS_TYPE(MouseMoved)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	private:
-		int m_MouseX, m_MouseY;
+		float m_MouseX, m_MouseY;
 	};
 
 	class HAZEL_API MouseScrolledEvent : public Event
@@ -45,7 +45,7 @@ namespace Hazel {
 		EVENT_CLASS_TYPE(MouseScrolled)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	private:
-		int m_XOffset, m_YOffset;
+		float m_XOffset, m_YOffset;
 	};
 
 	class HAZEL_API MouseButtonEvent : public Event
