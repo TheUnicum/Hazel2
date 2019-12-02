@@ -9,3 +9,7 @@ bin-int/
 *.user
 *.vcxproj
 *.filters
+
+# json Files
+*.json
+
