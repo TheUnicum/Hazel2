@@ -1,5 +1,5 @@
 workspace "Hazel2"
-    architecture "x64"
+    architecture "x86_64"
     startproject "Sandbox"
 
     configurations
@@ -40,8 +40,8 @@ project "Hazel"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	pchheader "hzpch.h"
-	pchsource "Hazel/src/hzpch.cpp"
+    pchheader "hzpch.h"
+    pchsource "Hazel/src/hzpch.cpp"
 
     files
     {
@@ -62,11 +62,11 @@ project "Hazel"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-		IncludeDir.GLFW,
-		IncludeDir.Glad,
-		IncludeDir.imgui,
-		IncludeDir.glm,
-		IncludeDir.stb_image,
+        IncludeDir.GLFW,
+        IncludeDir.Glad,
+        IncludeDir.imgui,
+        IncludeDir.glm,
+        IncludeDir.stb_image,
     }
     
     links
