@@ -22,3 +22,8 @@ Hazel::Application* Hazel::CreateApplication()
 {
 	return new Sandbox();
 }
+/*
+https://hazelengine.com/issues
+https://www.kenney.nl/assets/page:7
+https://www.kenney.nl/assets/rpg-base
+*/

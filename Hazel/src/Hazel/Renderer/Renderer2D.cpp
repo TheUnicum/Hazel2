@@ -200,8 +200,17 @@ namespace Hazel {
 	{
 		HZ_PROFILE_FUNCTION();
 
+		constexpr float x = 7, y = 6;
+		constexpr float sheetWidth = 2560, sheetHeight = 1664;
+		constexpr float spriteWidth = 128, spriteHeight = 128;
+
 		constexpr size_t quadVertexCount = 4;
-		constexpr glm::vec2 textureCoords[] = { { 0.0f, 0.0f }, { 1.0f, 0.0f }, { 1.0f, 1.0f }, { 0.0f, 1.0f } };
+		constexpr glm::vec2 textureCoords[] = { 
+			{ (x * spriteWidth) / sheetWidth, (y * spriteWidth) / sheetHeight },
+			{ ((x + 1) * spriteWidth) / sheetWidth, (y * spriteWidth) / sheetHeight },
+			{ ((x + 1) * spriteWidth) / sheetWidth, ((y + 1) * spriteWidth) / sheetHeight },
+			{ (x * spriteWidth) / sheetWidth, ((y + 1) * spriteWidth) / sheetHeight },
+		};
 
 		if (s_Data.QuadIndexCount >= Renderer2DData::MaxIndices)
 			FlushAndReset();
